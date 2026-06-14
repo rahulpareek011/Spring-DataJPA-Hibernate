@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
         schema = "rp",
         name = "product_table",
         uniqueConstraints = {
-                @UniqueConstraint(name = "sku_unique",columnNames = "sku"),
+                @UniqueConstraint(name = "sku_unique",columnNames = "sku"), //also whenever you create constraint it also create index by default
                 @UniqueConstraint(name = "title_price_unique",columnNames = {"title_x","price"})//Composite Unique Constraint
                                                                                     // (ensures the combination of multiple columns remains unique).
         },
@@ -23,9 +23,9 @@ import java.time.LocalDateTime;
                 @Index(name = "sku_index",columnList = "sku")
         }
 )
-public class Product {
+public class ProductEntity {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 

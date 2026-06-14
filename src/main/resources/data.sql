@@ -1,0 +1,1 @@
+Insert into test.product_table (price,quantity,sku,title_x) VALUES (10000,2,'realme','realme narzo');
